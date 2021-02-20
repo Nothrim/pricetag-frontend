@@ -7,7 +7,13 @@ import {Price} from './Price';
   styleUrls: ['./price-add.component.css']
 })
 export class PriceAddComponent implements OnInit {
-  price : Price;
+  price: Price =   {name: 'Ziemniak'
+    , amount: 1.5
+    , currency: 'PLN'
+    , photos: ['foto_ziemniaka.png', 'foto_ziemniak2.png']
+    , discount: 0
+    , qrCode: '11101010120'
+  };
   constructor() { }
 
   ngOnInit(): void {

@@ -1,0 +1,8 @@
+<div>
+  <h2>Prices list</h2>
+  <ul class="prices">
+    <li *ngFor="let price of prices">
+      <span class="badge">{{price.name}}</span> {{price.amount}} {{price.currency}}
+    </li>
+  </ul>
+</div>
