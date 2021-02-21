@@ -9,6 +9,10 @@ import {PRICES} from './Prices';
 })
 export class PriceListComponent implements OnInit {
   prices: Price[] = PRICES;
+  selectedPrice?: Price;
+  selectPrice(price: Price): void{
+    this.selectedPrice = price;
+  }
   constructor() { }
 
   ngOnInit(): void {

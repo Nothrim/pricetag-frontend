@@ -1,8 +1,8 @@
 export interface Price {
-  name: String;
+  name: string;
   amount: number;
-  currency: String;
-  photos: String[];
+  currency: string;
+  photos: string[];
   discount: number;
-  qrCode: String;
+  qrCode: string;
 }

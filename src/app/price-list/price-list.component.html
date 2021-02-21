@@ -1,8 +1,21 @@
+<h2>Slected price:</h2>
+<div *ngIf="selectedPrice">
+  <h2>{{selectedPrice.name | uppercase}} Details</h2>
+  <div><span>qr: </span><input [(ngModel)]="selectedPrice.qrCode" placeholder="qrCode"/></div>
+  <div><span>price: </span><input [(ngModel)]="selectedPrice.amount" placeholder="amount"/>
+    <input [(ngModel)]="selectedPrice.currency" placeholder="currency"/></div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedPrice.name" placeholder="name"/>
+    </label>
+  </div>
+</div>
+
 <div>
   <h2>Prices list</h2>
   <ul class="prices">
-    <li *ngFor="let price of prices">
-      <span class="badge">{{price.name}}</span> {{price.amount}} {{price.currency}}
+    <li *ngFor="let price of prices" [class.selected]="price == selectedPrice" (click)="selectPrice(price)">
+      <span class="badge">{{price.name}} ({{price.qrCode}})</span> {{price.amount}} {{price.currency}}
     </li>
   </ul>
 </div>
